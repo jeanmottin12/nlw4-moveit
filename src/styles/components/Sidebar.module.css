@@ -1,0 +1,119 @@
+.containerSidebar {
+  width: 112px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  background-image: linear-gradient(to bottom, #ffffff, rgba(255,255,255, 0));
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.containerSidebar > img {
+  position: absolute;
+  top: 30px;
+}
+
+.containerSidebar nav {
+  width: 100%;
+}
+
+.containerSidebar nav ul {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.containerSidebar nav ul li {
+  margin: 10px 0;
+  width: 100%;
+}
+
+.containerSidebar nav ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  width: 100%;
+  height: 56px;
+  cursor: pointer;
+
+  transition: .2s all ease;
+}
+
+.containerSidebar nav ul li a:hover::before{
+  content: "";
+  width: 4px;
+  height: 100%;
+  background: var(--blue);
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.containerSidebar nav ul li a:hover svg g {
+  opacity: 1;
+}
+
+.containerSidebar nav ul li a:hover svg g path {
+  stroke: var(--blue);
+}
+
+@media (max-width: 640px) {
+  .containerSidebar {
+    width: 100%;
+    position: relative;
+    height: 100px;
+    background-color: var(--white);
+  
+    justify-content: space-between;
+    flex-direction: row;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .containerSidebar > img {
+    position: relative;
+    top: 0;
+  }
+  
+  .containerSidebar nav {
+    width: auto;
+  }
+  
+  .containerSidebar nav ul {
+    flex-direction: row;
+  }
+  
+  .containerSidebar nav ul li {
+    margin: 0px 10px;
+    width: 50px;
+    height: 100%;
+  }
+  
+  .containerSidebar nav ul li a {
+    height: 100%;
+    width: 56px;
+  }
+  
+  .containerSidebar nav ul li a:hover::before{
+    content: "";
+    width: 100%;
+    height: 4px;
+    top: unset;
+    bottom: 0;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 0;
+  }
+}
