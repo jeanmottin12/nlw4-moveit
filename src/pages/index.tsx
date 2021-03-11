@@ -1,67 +1,34 @@
-import Head from 'next/head';
-import { GetServerSideProps } from 'next';
+import { useState } from 'react';
 
-import { CountdownProvider } from '../contexts/CountdownContext';
-import { ChallengesProvider } from '../contexts/ChallengesContext';
+import styles from '../styles/pages/Welcome.module.css';
 
-import { CompletedChallenges } from "../components/CompletedChallenges";
-import { Countdown } from "../components/Countdown";
-import { ExperienceBar } from "../components/ExperienceBar";
-import { Profile } from "../components/Profile";
-import { ChallengeBox } from "../components/ChallengeBox";
+export default function Welcome() {
+  const [username, setUsername] = useState('');
 
-import styles from '../styles/pages/Home.module.css';
-import Sidebar from '../components/Sidebar';
-
-interface HomeProps {
-  level: number;
-  currentExperience: number;
-  challengesCompleted: number;
-}
-
-export default function Home(props: HomeProps) {
   return (
-    <main className="main">
-      <Sidebar />
-      <ChallengesProvider
-        level={props.level}
-        currentExperience={props.currentExperience}
-        challengesCompleted={props.challengesCompleted}
-      >
-        <div className={styles.container}>
-          <Head>
-            <title>Início | move.it</title>
-          </Head>
+    <main className={styles.mainWelcome}>
+      <div className={styles.mainContainer}>
+        <div>
+          <img src="logo-white.svg" alt="Logo"/>
+          <h1>Bem-vindo</h1>
+          <div>
+            <img src="icons/github.svg" alt="Github icon"/>
+            <p>Faça login com seu Github para começar</p>
+          </div>
 
-          <ExperienceBar />
-
-          <CountdownProvider>
-            <section>
-              <div>
-                <Profile />
-                <CompletedChallenges />
-                <Countdown />
-              </div>
-              <div>
-                <ChallengeBox />
-              </div>
-            </section>
-          </CountdownProvider>
+          <form>
+            <input
+              type="text"
+              placeholder="Digite seu username"
+              value={username}
+              onChange={e => setUsername(e.target.value)}
+            />
+            <button>
+              <img src="icons/arrow-right.svg" alt="Arrow Right"/>
+            </button>
+          </form>
         </div>
-      </ChallengesProvider>
+      </div>
     </main>
   )
-}
-
-
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const { level, currentExperience, challengesCompleted } = ctx.req.cookies;
-
-  return {
-    props: {
-      level: Number(level),
-      currentExperience: Number(currentExperience),
-      challengesCompleted: Number(challengesCompleted),
-    }
-  }
 }

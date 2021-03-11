@@ -10,7 +10,7 @@ export default function Sidebar() {
       <nav>
         <ul>
           <li>
-            <Link href="/">
+            <Link href="/dashboard">
               <a className={styles.teste}>
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g opacity="0.5">

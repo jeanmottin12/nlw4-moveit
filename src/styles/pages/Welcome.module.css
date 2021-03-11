@@ -1,0 +1,93 @@
+.mainWelcome {
+  height: 100vh;
+
+  background: var(--blue);
+  background-image: url('../../../public/bg-welcome.svg');
+  background-size: 768px;
+  background-position: center left;
+  background-repeat: no-repeat;
+}
+
+.mainContainer {
+  max-width: 992px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.mainContainer > div {
+  max-width: 420px;
+  width: 100%;
+}
+
+.mainContainer > div > img {
+  margin-bottom: 5rem;
+  max-width: 100%;
+}
+
+.mainContainer > div h1 {
+  font-size: 2.2rem;
+  color: var(--white);
+  margin-bottom: 1.6rem;
+  font-weight: 600;
+}
+
+.mainContainer > div > div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.mainContainer > div > div p {
+  font-size: 1.2rem;
+  line-height: 30px;
+  margin-left: 15px;
+  color: var(--text-highlight);
+  max-width: 250px;
+}
+
+.mainContainer form {
+  display: flex;
+}
+
+.mainContainer input {
+  width: 100%;
+  border: 0;
+  background: linear-gradient(90deg, rgba(73,83,184,1) 0%, rgba(73,83,184,0) 100%);
+
+  color: var(--white);
+  padding-left: 20px;
+  font-size: 1.2rem;
+
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.mainContainer input::placeholder {
+  color: var(--text-highlight);
+}
+
+.mainContainer button {
+  min-width: 80px;
+  height: 80px;
+  background: var(--blue-dark);
+  border: 0;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  transition: background 0.2s;
+}
+
+.mainContainer button:hover {
+  background: var(--green)
+}
