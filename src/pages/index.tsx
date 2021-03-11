@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from 'next/link';
 
 import styles from '../styles/pages/Welcome.module.css';
 
@@ -23,9 +24,11 @@ export default function Welcome() {
               value={username}
               onChange={e => setUsername(e.target.value)}
             />
-            <button>
-              <img src="icons/arrow-right.svg" alt="Arrow Right"/>
-            </button>
+            <Link href="/dashboard">
+              <a>
+                <img src="icons/arrow-right.svg" alt="Arrow right"/>
+              </a>
+            </Link>
           </form>
         </div>
       </div>

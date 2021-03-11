@@ -71,7 +71,7 @@
   color: var(--text-highlight);
 }
 
-.mainContainer button {
+.mainContainer a {
   min-width: 80px;
   height: 80px;
   background: var(--blue-dark);
@@ -88,6 +88,6 @@
   transition: background 0.2s;
 }
 
-.mainContainer button:hover {
+.mainContainer a:hover {
   background: var(--green)
 }
